@@ -15,7 +15,7 @@ const verifyUser = async (req, res, next) => {
   }
 
   try {
-    const decoded = await jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = await jwt.verify(token, process.env.APP_SECRET);
     req.user = decoded;
     next();
   } catch (e) {
